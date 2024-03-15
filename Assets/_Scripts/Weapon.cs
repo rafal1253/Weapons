@@ -22,6 +22,7 @@ public class MeleeWeapon : Weapon
     public override void Attack()
     {
         Debug.Log("U¿yta broñ bia³a: " + weaponName);
+        // code logic of using weapon...
     }
 }
 
@@ -35,5 +36,6 @@ public class RangedWeapon : Weapon
     public override void Attack()
     {
         Debug.Log("U¿yta broñ palna: " + weaponName);
+        // code logic of using weapon...
     }
 }
