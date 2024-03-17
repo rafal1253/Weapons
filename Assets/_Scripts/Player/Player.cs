@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] float _speed = 15f;
@@ -38,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void RotateX()
     {
-        //Rotate X
         float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime;
         transform.Rotate(Vector3.up * mouseX * Settings.Instance.MouseSensitivity);
     }
