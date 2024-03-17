@@ -91,7 +91,6 @@ public class Player : MonoBehaviour
             _activeWeapon = _equippedWeapons[newWeaponIndex];
         }
     }
-
-    private void 
+ 
     #endregion
 }
