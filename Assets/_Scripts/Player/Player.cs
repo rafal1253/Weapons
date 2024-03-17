@@ -70,26 +70,38 @@ public class Player : MonoBehaviour
     private void EquipStartingWeapon()
     {
         if (_equippedWeapons.Count > 0)
-            _activeWeapon = _equippedWeapons[0]; 
+            _activeWeapon = _equippedWeapons[0];
+        else
+            Debug.Log("BRAK BRONI W EKWIPUNKU " +
+                "- Dodaj bronie z folderu '_Prefabs -> Weapons' do listy '_equippedWeapons' skryptu 'Player.cs' dla obiektu 'FirstPersonPlayer' w hierarchi sceny.");
 
-        // ADD equip weapon event
-    }
-
-    private void UseWeapon()
-    {
-        if (Input.GetButtonDown("Fire1"))
-            _activeWeapon.Attack();
+        UpdateWeaponInfo();
     }
 
     private void NextWeapon()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") && _activeWeapon != null)
         {
             int currentWeaponIndex = _equippedWeapons.IndexOf(_activeWeapon);
             int newWeaponIndex = currentWeaponIndex + 1 == _equippedWeapons.Count ? 0 : currentWeaponIndex + 1;
 
             _activeWeapon = _equippedWeapons[newWeaponIndex];
+
+            UpdateWeaponInfo();
+            Debug.Log("Zmiana broni na : " + _activeWeapon.WeaponName);
         }
+            
+    }
+
+    private void UseWeapon()
+    {
+        if (Input.GetButtonDown("Fire1") && _activeWeapon != null)
+            _activeWeapon.Attack();
+    }
+
+    private void UpdateWeaponInfo()
+    {
+        EventManager.InvokeOnUpdateWeapon(_activeWeapon);
     }
  
     #endregion

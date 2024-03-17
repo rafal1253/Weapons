@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc300584a8f2c5499bcec055796408c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Kilof
-  damage: 5
-  meleeType: 0
-  attackRange: 2
+  _weaponName: Kilof
+  _damage: 5
+  _meleeType: 0
+  _attackRange: 2
 --- !u!1 &6218970015393548428
 GameObject:
   m_ObjectHideFlags: 0

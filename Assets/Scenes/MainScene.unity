@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 111337572}
   - component: {fileID: 111337571}
   - component: {fileID: 111337570}
+  - component: {fileID: 111337574}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -225,6 +226,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &111337574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111337568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16256d926f9a61d4cb8816c9a4528480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponNameText: {fileID: 755490059}
+  _weaponIconImage: {fileID: 913864606}
 --- !u!1 &515871430
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,86 +328,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40dd09bdb194ef649b49dd5ae6399f2f, type: 3}
---- !u!1 &633933778
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 633933779}
-  - component: {fileID: 633933780}
-  - component: {fileID: 633933781}
-  m_Layer: 5
-  m_Name: WeaponAmmoText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &633933779
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633933778}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1018661161}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 20, y: -7.3863983}
-  m_SizeDelta: {x: 290.68, y: 30}
-  m_Pivot: {x: 0, y: 0.5}
---- !u!222 &633933780
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633933778}
-  m_CullTransparentMesh: 1
---- !u!114 &633933781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633933778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 18
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 40
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Ammo: 00/99'
 --- !u!1 &636215058
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,8 +525,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 54.47904, y: 21.3068}
-  m_SizeDelta: {x: 256.196, y: 27.3864}
+  m_AnchoredPosition: {x: 54.47904, y: 0}
+  m_SizeDelta: {x: 256.196, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &755490058
 CanvasRenderer:
@@ -623,7 +558,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 22
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
@@ -634,9 +569,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Weapon Name
-
-'
+  m_Text: 
 --- !u!1 &913864604
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,8 +605,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 33.260002, y: 21.307}
-  m_SizeDelta: {x: 27.386993, y: 27.387}
+  m_AnchoredPosition: {x: 33.260002, y: 0}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &913864606
 MonoBehaviour:
@@ -745,14 +678,13 @@ RectTransform:
   m_Children:
   - {fileID: 913864605}
   - {fileID: 755490057}
-  - {fileID: 633933779}
   m_Father: {fileID: 111337573}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 20, y: 20}
-  m_SizeDelta: {x: 320.8639, y: 95.9646}
+  m_SizeDelta: {x: 320.8639, y: 44.3294}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1018661162
 MonoBehaviour:
@@ -951,6 +883,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3636593205856008610, guid: c690ec43e0ff0d145b3a81e994f75624, type: 3}
+      propertyPath: m_Name
+      value: ActiveWeaponHandler
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918960044150241978, guid: c690ec43e0ff0d145b3a81e994f75624, type: 3}
+      propertyPath: _equippedWeapons.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918960044150241978, guid: c690ec43e0ff0d145b3a81e994f75624, type: 3}
+      propertyPath: _equippedWeapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 8552190290268662213, guid: b15413ded03a280429901592c2b9a0e6, type: 3}
+    - target: {fileID: 8918960044150241978, guid: c690ec43e0ff0d145b3a81e994f75624, type: 3}
+      propertyPath: _equippedWeapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 5029173694392913463, guid: f884c8db13e11e849ad4d74ff35ff28f, type: 3}
+    - target: {fileID: 8918960044150241978, guid: c690ec43e0ff0d145b3a81e994f75624, type: 3}
+      propertyPath: _equippedWeapons.Array.data[2]
+      value: 
+      objectReference: {fileID: 8987102907201434018, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+    - target: {fileID: 8918960044150241978, guid: c690ec43e0ff0d145b3a81e994f75624, type: 3}
+      propertyPath: _equippedWeapons.Array.data[3]
+      value: 
+      objectReference: {fileID: 4639367986199558637, guid: f3cc4b26fa9447c41b4ed20cb99de6c1, type: 3}
     - target: {fileID: 8918960044150241979, guid: c690ec43e0ff0d145b3a81e994f75624, type: 3}
       propertyPath: m_RootOrder
       value: 2
