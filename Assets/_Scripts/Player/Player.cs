@@ -11,7 +11,9 @@ public class Player : MonoBehaviour
 
     [Header("Equipment")]
     [SerializeField] List<Weapon> _equippedWeapons;
+    [SerializeField] Transform _weaponsHolder;
     private Weapon _activeWeapon;
+
 
     private Rigidbody _rb;
 
@@ -22,7 +24,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        EquipStartingWeapon();
+        LoadStartingEquipment();
     }
 
     private void Update()
@@ -67,15 +69,19 @@ public class Player : MonoBehaviour
     #endregion
 
     #region WeaponHandling
-    private void EquipStartingWeapon()
+    private void LoadStartingEquipment()
     {
         if (_equippedWeapons.Count > 0)
-            _activeWeapon = _equippedWeapons[0];
+        {
+            foreach (var item in _equippedWeapons)
+            {
+                Instantiate(item, _weaponsHolder);
+            }
+            ChangeWeaponTo(0);
+        }
         else
             Debug.Log("BRAK BRONI W EKWIPUNKU " +
-                "- Dodaj bronie z folderu '_Prefabs -> Weapons' do listy '_equippedWeapons' skryptu 'Player.cs' dla obiektu 'FirstPersonPlayer' w hierarchi sceny.");
-
-        UpdateWeaponInfo();
+                "- Dodaj bronie z folderu '_Prefabs -> Weapons' do listy '_equippedWeapons' skryptu 'Player.cs' dla obiektu 'FirstPersonPlayer' w hierarchi sceny.");  
     }
 
     private void NextWeapon()
@@ -85,10 +91,8 @@ public class Player : MonoBehaviour
             int currentWeaponIndex = _equippedWeapons.IndexOf(_activeWeapon);
             int newWeaponIndex = currentWeaponIndex + 1 == _equippedWeapons.Count ? 0 : currentWeaponIndex + 1;
 
-            _activeWeapon = _equippedWeapons[newWeaponIndex];
 
-            UpdateWeaponInfo();
-            Debug.Log("Zmiana broni na : " + _activeWeapon.WeaponName);
+            ChangeWeaponTo(newWeaponIndex);
         }
             
     }
@@ -99,8 +103,17 @@ public class Player : MonoBehaviour
             _activeWeapon.Attack();
     }
 
-    private void UpdateWeaponInfo()
+    private void ChangeWeaponTo(int index)
     {
+        _activeWeapon = _equippedWeapons[index];
+
+        int i = 0;
+        foreach (Transform weapon in _weaponsHolder)
+        {
+            weapon.gameObject.SetActive(i == _equippedWeapons.IndexOf(_activeWeapon));
+            i++;
+        }
+
         EventManager.InvokeOnUpdateWeapon(_activeWeapon);
     }
  

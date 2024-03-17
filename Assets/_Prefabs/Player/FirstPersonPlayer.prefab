@@ -178,6 +178,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 100
   _camera: {fileID: 8918960044343572188}
+  _equippedWeapons: []
+  _weaponsHolder: {fileID: 3636593205856008611}
 --- !u!54 &8918960044150241977
 Rigidbody:
   m_ObjectHideFlags: 0
