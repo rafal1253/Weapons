@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4147692350680186460}
+  - component: {fileID: 4639367986199558637}
   m_Layer: 0
   m_Name: AK74
   m_TagString: Untagged
@@ -32,6 +33,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4639367986199558637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813038039228855072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a166f788384898b4ea8fac7eb897c896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: AK47
+  damage: 100
+  fireMode: 2
+  ammoCount: 30
 --- !u!1 &3238339151832274425
 GameObject:
   m_ObjectHideFlags: 0
