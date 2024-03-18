@@ -14,6 +14,12 @@ public class GameplayUI : MonoBehaviour
     [SerializeField] Text _weaponNameText;
     [SerializeField] Image _weaponIconImage;
 
+
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     private void OnEnable()
     {
         EventManager.OnUpdateWeapon += OnUpdateWeapon;
